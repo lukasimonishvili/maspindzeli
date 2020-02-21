@@ -1,0 +1,28 @@
+.flex {
+  display: flex;
+
+  &__center {
+    display: flex;
+    align-items: center;
+
+    &-x2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &-space {
+    &-btw {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-around {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+}

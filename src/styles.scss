@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/reset";
+@import "./assets/styles/flex";
+@import "./assets/styles/position";
+@import "./assets/styles/fonts";
+
+html {
+  font-size: 10px;
+  font-family: "Hermes";
+}
+
+.container {
+  width: 1600px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1660px) {
+    width: 100%;
+    padding: 0 30px;
+  }
+}
