@@ -1,0 +1,15 @@
+<div class="spiner flex-center">
+  <div class="spiner__display">{{ count }}</div>
+  <div class="spiner__wrapper">
+    <div
+      class="spiner__icon"
+      (click)="plus()"
+      [ngClass]="{ spiner__icon__disabled: +count == maxValue }"
+    ></div>
+    <div
+      class="spiner__icon"
+      (click)="minus()"
+      [ngClass]="{ spiner__icon__disabled: +count == minValue }"
+    ></div>
+  </div>
+</div>

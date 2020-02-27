@@ -1,0 +1,33 @@
+.spiner {
+  &__display {
+    font-size: 2.4rem;
+    line-height: 3.5rem;
+    font-weight: normal;
+  }
+
+  &__wrapper {
+    padding-left: 10px;
+  }
+
+  &__icon {
+    width: 9px;
+    height: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    &:first-child {
+      background-image: url(../../../assets/img/icons/arrow-up.svg);
+      margin-bottom: 5px;
+    }
+
+    &:last-child {
+      background-image: url(../../../assets/img/icons/arrow-down.svg);
+    }
+
+    &__disabled {
+      opacity: 0.4;
+      cursor: auto;
+    }
+  }
+}

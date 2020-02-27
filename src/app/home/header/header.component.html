@@ -1,0 +1,88 @@
+<header class="ms-header">
+  <div class="container">
+    <div class="ms-header__wrapper flex-space-btw">
+      <h1 class="ms-header__logo">
+        <img src="../../../assets/img/header-logo.png" alt="" />
+      </h1>
+      <nav class="ms-header__navigation flex-center">
+        <div class="ms-header__navigation__item">HOME</div>
+        <div class="ms-header__navigation__item">TRIPS</div>
+        <div class="ms-header__navigation__item">ABOUT</div>
+        <div class="ms-header__navigation__item">CONTACT</div>
+        <div class="ms-header__navigation__item">
+          <app-select
+            [defaultValue]="'EN'"
+            [options]="['EN', 'KA', 'RU']"
+            (onSelect)="onLanguageSelect($event)"
+            [background]="'transparent'"
+          ></app-select>
+        </div>
+        <div class="ms-header__navigation__item">
+          <img src="../../../assets/img/header-search-icon.svg" alt="" />
+        </div>
+      </nav>
+    </div>
+    <div class="ms-header__filter flex-space-btw">
+      <div class="ms-header__filter__wrapper">
+        <div class="ms-header__filter__top flex">
+          <div class="date flex-center">
+            <div class="date__icon"></div>
+            <div class="date__wrapper">
+              <span class="date__label">When ?</span>
+              <div class="date__inputs flex-center">
+                <date-picker
+                  [placeholder]="'From'"
+                  [defaultValue]="currentDate"
+                ></date-picker>
+                <div class="date__line"></div>
+                <date-picker
+                  [placeholder]="'To'"
+                  [defaultValue]="currentDate"
+                ></date-picker>
+              </div>
+            </div>
+          </div>
+          <div class="location flex-center">
+            <div class="location__icon"></div>
+            <div class="location__wrapper">
+              <span class="location__label">Start point ?</span>
+              <app-select
+                [options]="['Batumi', 'Kutaisi', 'Tbilisi']"
+                [defaultValue]="'Tbilisi'"
+                (onSelect)="onLocationSelect($event)"
+              ></app-select>
+            </div>
+          </div>
+          <div class="guest flex-center">
+            <div class="guest__icon"></div>
+            <div class="guest__wrapper">
+              <span class="guest__label">Guests ?</span>
+              <number-spiner
+                [defaultValue]="0"
+                (onChange)="onGuestCountChange($event)"
+                [minValue]="0"
+              ></number-spiner>
+            </div>
+          </div>
+        </div>
+        <div class="ms-header__filter__bottom flex-center">
+          <div class="ms-header__filter__label">TRIP TYPE</div>
+          <div class="ms-header__filter__boxes flex-space-around">
+            <checkbox
+              *ngFor="let item of checkboxes"
+              [label]="item"
+              (onChange)="onCheckBoxChange($event)"
+            ></checkbox>
+          </div>
+        </div>
+      </div>
+      <div
+        (click)="onFilterSubmit()"
+        class="ms-header__filter__submit flex-center-x2"
+      >
+        <span class="text">BOOK NOW!</span>
+        <span class="icon"></span>
+      </div>
+    </div>
+  </div>
+</header>

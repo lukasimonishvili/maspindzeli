@@ -1,0 +1,31 @@
+.checkbox {
+  cursor: pointer;
+
+  &__box {
+    width: 18px;
+    height: 18px;
+    border-radius: 2px;
+    border: 2px solid #ffac00;
+
+    & .icon {
+      background-image: url(../../../assets/img/icons/checked.svg);
+      background-repeat: no-repeat;
+
+      width: 8.7px;
+      height: 6.3px;
+      opacity: 0;
+      transition: 0.5s;
+    }
+  }
+
+  & span {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    padding-left: 10px;
+    color: #00556a;
+  }
+
+  &__checked {
+    opacity: 1 !important;
+  }
+}

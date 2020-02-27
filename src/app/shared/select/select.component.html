@@ -1,0 +1,25 @@
+<div
+  class="select relative"
+  [ngStyle]="{ 'background-color': background }"
+  (mz-outclick)="toggleSelect(false)"
+>
+  <div class="select__header flex-center" (click)="toggleSelect()">
+    <div class="select__selected">{{ defaultValue }}</div>
+    <div class="select__icon"></div>
+  </div>
+  <div
+    class="select__wrapper absolute"
+    [ngClass]="{ select__extanded: extanded }"
+    [ngStyle]="{ 'background-color': background }"
+  >
+    <ng-container *ngFor="let option of options; let i = index">
+      <div
+        (click)="onOptionClick(i)"
+        class="select__option"
+        *ngIf="option !== defaultValue"
+      >
+        {{ option }}
+      </div>
+    </ng-container>
+  </div>
+</div>

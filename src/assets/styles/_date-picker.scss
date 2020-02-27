@@ -1,0 +1,66 @@
+.dp {
+  &-picker {
+    &-input {
+      border: none !important;
+      width: 135px !important;
+      color: #003a5d !important;
+      font-size: 2.4rem !important;
+      font-weight: bold !important;
+      line-height: 3.5rem !important;
+    }
+  }
+
+  &-calendar {
+    &-nav {
+      &-left,
+      &-right {
+        border: none !important;
+        background: white !important;
+
+        &::before {
+          border-color: #003a5d !important;
+        }
+      }
+      &-container {
+        border: none !important;
+      }
+    }
+
+    &-weekday,
+    &-wrapper {
+      border: none !important;
+    }
+
+    &-day,
+    &-month {
+      border: none !important;
+      background-color: white !important;
+      color: #003a5d !important;
+      font-family: "Hermes" !important;
+    }
+  }
+
+  &-selected {
+    color: white !important;
+    background-color: #ffb100 !important;
+  }
+
+  &-nav {
+    &-header {
+      &-btn {
+        border: none !important;
+        background-color: white !important;
+        font-family: "Hermes" !important;
+        color: #003a5d !important;
+      }
+    }
+  }
+
+  &-current {
+    &-location {
+      &-btn {
+        display: none !important;
+      }
+    }
+  }
+}
