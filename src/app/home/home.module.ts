@@ -6,11 +6,16 @@ import { MainComponent } from "./main/main.component";
 import { HeaderComponent } from "./header/header.component";
 
 import { SharedModule } from "../shared/shared.module";
-import { AboutComponent } from './about/about.component';
-import { HostsComponent } from './hosts/hosts.component';
+import { AboutComponent } from "./about/about.component";
+import { HostsComponent } from "./hosts/hosts.component";
 
 @NgModule({
-  declarations: [MainComponent, HeaderComponent, AboutComponent, HostsComponent],
+  declarations: [
+    MainComponent,
+    HeaderComponent,
+    AboutComponent,
+    HostsComponent
+  ],
   imports: [CommonModule, HomeRoutingModule, SharedModule]
 })
 export class HomeModule {}

@@ -1,0 +1,138 @@
+.ms-hosts {
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 47px;
+
+  &__shape {
+    width: 1075px;
+    height: 697px;
+    background-image: url(../../../assets/img/host-shape.svg);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__title {
+    font-size: 8rem;
+    line-height: 9.8rem;
+    color: #135468;
+    max-width: 446px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -20px;
+      z-index: -1;
+      width: 125px;
+      height: 9.8rem;
+      border-radius: 4px;
+      background-color: #f7b334;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 49px;
+      right: 100px;
+      width: 22px;
+      height: 18px;
+      background-image: url(../../../assets/img/icons/bird-gold.png);
+    }
+  }
+
+  &__description {
+    &__icon {
+      width: 25px;
+      height: 25px;
+      background-image: url(../../../assets/img/icons/guest.png);
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 2.3rem;
+      color: rgb(7, 30, 38);
+      padding-left: 25px;
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    height: 586px;
+    margin-top: 40px;
+
+    &__wrapper {
+      // overflow: hidden;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      transition: 0.5s;
+    }
+
+    &__holder {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      // box-shadow: 0 0 15px 0 rgba(19, 84, 104, 0.1);
+    }
+
+    &__item {
+      background-color: white;
+      width: calc((100% - 180px) / 3);
+      height: 100%;
+      margin-left: calc((100% - (100% - 180px)) / 2);
+      font-size: 6rem;
+      text-align: center;
+      box-shadow: 0 0 15px 0 rgba(19, 84, 104, 0.1);
+      flex: 1 0 auto;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &__arrows {
+      width: calc(100% + 50px);
+      top: 50%;
+      left: -25px;
+      transform: translateY(-50%);
+
+      &__active {
+        background-color: rgb(247, 179, 52) !important;
+
+        & svg {
+          fill: white !important;
+        }
+      }
+
+      &__item {
+        border-radius: 50%;
+        background-color: rgba(7, 30, 38, 0.1);
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+
+        & svg {
+          width: 15px;
+          height: auto;
+          fill: rgba(7, 30, 38, 0.5);
+        }
+      }
+    }
+  }
+}
+
+.Ellipse_1_copy {
+  border-radius: 50%;
+  background-color: rgb(247, 179, 52);
+  position: absolute;
+  left: 1967px;
+  top: 2670px;
+  width: 50px;
+  height: 50px;
+  z-index: 276;
+}
