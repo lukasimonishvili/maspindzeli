@@ -1,13 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Maspindzeli</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Maspindzeli</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+  </head>
+  <body>
+    <app-root></app-root>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script id="slideScript">
+      window.addEventListener("load", () => {
+        let swiper = new Swiper(".swiper-container", {
+          slidesPerView: 3,
+          spaceBetween: 10,
+          breakpoints: { "1700": { spaceBetween: 80 } },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

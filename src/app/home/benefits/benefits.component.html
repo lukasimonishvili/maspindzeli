@@ -1,0 +1,12 @@
+<section class="ms-benefits relative">
+  <div class="ms-benefits__shape absolute"></div>
+  <div class="container">
+    <h2 class="ms-benefits__title relative">OUR BENEFITS</h2>
+    <ul class="ms-benefits__list flex-space-around">
+      <li class="ms-benefits__list__item" *ngFor="let benefit of benefits">
+        <img src="{{ benefit.image }}" alt="" class="ms-benefits__image" />
+        <p class="ms-benefits__text">{{ benefit.text }}</p>
+      </li>
+    </ul>
+  </div>
+</section>

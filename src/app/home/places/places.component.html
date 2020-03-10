@@ -1,0 +1,65 @@
+<section class="ms-places relative">
+  <div class="ms-places__shape absolute"></div>
+  <div class="container">
+    <div class="ms-places__wrapper flex-space-btw">
+      <h2 class="ms-places__title relative">
+        HOT THIS <br />
+        <span>SEASON</span>
+      </h2>
+      <div class="ms-places__description flex-center">
+        <div class="ms-places__description__icon"></div>
+        <p class="ms-places__description__text">
+          The languages only differ in their grammar, their pronunciation and
+          their most common words. Everyone realizes why a new common language
+          would be desirable
+        </p>
+      </div>
+      <div class="hidden"></div>
+    </div>
+    <ul class="ms-places__list flex-space-btw">
+      <li class="ms-places__list__item" *ngFor="let place of places">
+        <div
+          class="ms-places__image"
+          [ngStyle]="{ 'background-image': 'url(' + place.image + ')' }"
+        ></div>
+        <div class="ms-places__list__wrapper flex-space-btw">
+          <div class="ms-places__left">
+            <div class="ms-places__list__title">{{ place.title }}</div>
+            <div class="ms-places__location">
+              {{ place.country + " - " + place.title }}
+            </div>
+          </div>
+          <div class="ms-places__right">
+            <div class="ms-places__rate flex-center">
+              <div class="ms-places__rate__stars">
+                <img
+                  src="../../../assets/img/icons/star-full.png"
+                  alt=""
+                  class="ms-places__rate__stars__icon"
+                  *ngFor="let star of counter(place.rate.stars)"
+                />
+                <ng-container *ngIf="place.rate.stars < 5">
+                  <img
+                    src="../../../assets/img/icons/star-empty.png"
+                    alt=""
+                    class="ms-places__rate__stars__icon"
+                    *ngFor="let star of counter(5 - place.rate.stars)"
+                  />
+                </ng-container>
+              </div>
+              <span>{{ "(" + place.rate.total + ")" }}</span>
+            </div>
+            <div class="ms-places__tags">
+              <ng-container *ngFor="let tag of place.tripTypes; let i = index">
+                <span *ngIf="i < 4">
+                  {{ "#" + tag }}
+                  <span *ngIf="i < place.tripTypes.length - 1">, </span>
+                </span>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
