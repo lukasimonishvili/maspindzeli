@@ -16,6 +16,10 @@
     right: -74px;
     top: 0;
     background-image: url(../../../assets/img/about-shape.svg);
+
+    @media screen and (max-width: 1300px) {
+      z-index: -1;
+    }
   }
 
   &__wrapper {
@@ -158,6 +162,140 @@
           fill: white;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .ms-about {
+    &__wrapper {
+      width: calc(100% - 520px);
+    }
+
+    &__images {
+      width: 500px;
+      height: 500px;
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .ms-about {
+    margin-top: -250px;
+    min-height: inherit;
+
+    &__shape {
+      bottom: 0;
+      top: auto;
+    }
+
+    &__title {
+      &::after {
+        top: 80px;
+        left: 290px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .ms-about {
+    &__wrapper {
+      width: calc(100% - 420px);
+    }
+
+    &__images {
+      width: 400px;
+      height: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .ms-about {
+    &__title {
+      &::after {
+        top: 60px;
+        left: 230px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .ms-about {
+    &__container {
+      flex-wrap: wrap;
+    }
+
+    &__wrapper {
+      width: 100%;
+    }
+
+    &__title {
+      text-align: center;
+      margin: 0 auto;
+      max-width: 285px;
+
+      &::before {
+        left: 40px;
+      }
+    }
+
+    &__text {
+      text-align: center;
+    }
+
+    &__buttons {
+      justify-content: center;
+    }
+
+    &__images {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .ms-about {
+    &__title {
+      &::before {
+        width: 73px;
+        left: 70px;
+      }
+
+      &::after {
+        top: 38px;
+        left: 200px;
+      }
+    }
+
+    &__text {
+      font-size: 2.2rem;
+    }
+
+    &__buttons {
+      margin-top: 20px;
+
+      &__item {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &__images {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .ms-about {
+    &__images {
+      width: 260px;
+      height: 260px;
     }
   }
 }
