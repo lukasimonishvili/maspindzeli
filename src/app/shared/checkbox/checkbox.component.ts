@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 export class CheckboxComponent implements OnInit {
   @Input() label: string;
   @Input() checked: boolean = false;
+  @Input() styles: any;
   @Output() onChange: EventEmitter<any> = new EventEmitter();
 
   constructor() {}

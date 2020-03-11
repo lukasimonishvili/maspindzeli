@@ -8,6 +8,18 @@
 html {
   font-size: 10px;
   font-family: "Hermes";
+
+  @media screen and (max-width: 1150px) {
+    font-size: 9px;
+  }
+
+  @media screen and (max-width: 880px) {
+    font-size: 7px;
+  }
+
+  @media screen and (max-width: 640px) {
+    font-size: 5px;
+  }
 }
 
 .container {

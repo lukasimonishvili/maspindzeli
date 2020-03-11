@@ -27,12 +27,87 @@
       cursor: pointer;
 
       & img {
-        height: 20px;
+        height: 0;
         width: auto;
+        cursor: pointer;
+        transform: scale(0);
+        transition: 0.4s;
+
+        &.visible {
+          height: 20px;
+          transform: scale(1);
+        }
       }
 
       &:last-child {
         padding-right: 0;
+      }
+    }
+    & .search {
+      &__box {
+        width: 200px;
+        height: 30px;
+        border: 2px solid #003a5d;
+        right: 0;
+        top: 40px;
+        border-radius: 20px;
+        z-index: 3;
+        transform: scale(0);
+        transition: 0.4s;
+
+        &.visible {
+          transform: scale(1);
+        }
+
+        & input {
+          width: 100%;
+          height: 100%;
+          border-radius: 20px;
+          background-color: white;
+          border: none;
+          padding: 0 15px;
+          color: #003a5d;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  &__burger {
+    width: 20px;
+    height: 20px;
+    display: none;
+
+    &__item {
+      width: 100%;
+      height: 3px;
+      background-color: #003a5d;
+      transition: 0.4s;
+
+      &:first-child {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: calc(50% - 1.5px);
+      }
+
+      &:last-child {
+        top: 17px;
+      }
+    }
+
+    &.active {
+      & .ms-header__burger__item {
+        &:first-child,
+        &:last-child {
+          top: calc(50% - 1.5px);
+          transform: rotate(405deg);
+        }
+
+        &:nth-child(2) {
+          transform: rotate(-405deg);
+        }
       }
     }
   }
@@ -139,7 +214,7 @@
     &__bottom {
       border-radius: 0 0 4px 4px;
       width: 100%;
-      height: 62px;
+      height: auto;
     }
 
     &__label {
@@ -156,6 +231,7 @@
     &__boxes {
       width: calc(100% - 132px);
       height: 100%;
+      flex-wrap: wrap;
     }
 
     &__submit {
@@ -177,6 +253,296 @@
         width: 18.7px;
         height: 20px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1620px) {
+  .ms-header {
+    &__filter {
+      &__wrapper {
+        width: 80%;
+      }
+
+      &__submit {
+        width: 19%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .ms-header {
+    height: 680px;
+
+    &__navigation {
+      &__item {
+        padding-right: 50px;
+      }
+    }
+
+    &__filter {
+      margin-top: 300px;
+      height: 150px;
+
+      &__top {
+        height: 95px;
+      }
+    }
+  }
+
+  .date {
+    padding-left: 10px !important;
+    width: 530px !important;
+
+    &__line {
+      margin: 0 20px !important;
+    }
+  }
+
+  .location,
+  .guest {
+    padding-left: 10px !important;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .ms-header {
+    height: 550px;
+
+    &__wrapper {
+      padding-top: 25px;
+    }
+
+    &__logo {
+      width: 150px;
+    }
+
+    &__navigation {
+      &__item {
+        padding-right: 25px;
+      }
+    }
+
+    &__filter {
+      height: 115px;
+
+      &__top {
+        height: 60px;
+      }
+
+      & .date {
+        padding-left: 0;
+        justify-content: center;
+
+        &__icon {
+          background-size: cover;
+          width: 20px;
+          height: 20px;
+        }
+
+        &__wrapper {
+          padding-left: 10px;
+        }
+
+        &__line {
+          margin: 0 10px !important;
+        }
+      }
+
+      .location {
+        padding-left: 0;
+        justify-content: center;
+
+        &__icon {
+          width: 14px;
+          height: 20px;
+          background-size: cover;
+        }
+
+        &__wrapper {
+          padding-left: 10px;
+        }
+      }
+
+      .guest {
+        padding-left: 0;
+        justify-content: center;
+
+        &__icon {
+          background-size: cover;
+          width: 16.66px;
+          height: 16.66px;
+        }
+
+        &__wrapper {
+          padding-left: 10px;
+        }
+      }
+
+      &__label {
+        width: 60px;
+      }
+
+      &__boxes {
+        width: calc(100% - 60px);
+      }
+
+      &__submit {
+        & .icon {
+          margin-left: 10px;
+          background-size: cover;
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .ms-header {
+    height: auto;
+    min-height: 550px;
+    padding-bottom: 25px;
+
+    &__navigation {
+      &__item {
+        & img {
+          height: 11px;
+        }
+      }
+
+      & .search {
+        &__box {
+          top: 25px;
+        }
+      }
+    }
+
+    &__filter {
+      margin-top: 35px;
+      flex-direction: column;
+      height: auto;
+
+      &__wrapper {
+        width: auto;
+      }
+
+      &__submit {
+        height: auto;
+        width: auto;
+        margin-top: 20px;
+        padding: 30px 10px;
+      }
+
+      &__top {
+        flex-direction: column;
+        width: auto;
+        height: auto;
+      }
+
+      &__bottom {
+        flex-direction: column;
+        width: auto;
+        height: auto;
+      }
+
+      & .date,
+      & .location,
+      & .guest {
+        width: auto !important;
+        height: auto;
+        padding: 10px;
+        border: none;
+      }
+
+      & .date {
+        &__label {
+          display: none;
+        }
+      }
+
+      &__label {
+        width: auto;
+        height: auto;
+        padding: 10px;
+        border: none;
+        line-height: normal;
+      }
+
+      &__boxes {
+        width: auto;
+        flex-direction: column;
+
+        & checkbox {
+          padding: 5px 0;
+
+          &:first-child {
+            padding-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .ms-header {
+    & .container {
+      position: relative;
+    }
+    &__navigation {
+      position: absolute;
+      width: calc(100vw - 60px);
+      justify-content: space-between;
+      left: -100vw;
+      top: 55px;
+      transition: 0.4s;
+
+      &__item {
+        padding-right: 0;
+
+        & img {
+          transform: scale(1);
+          display: none;
+
+          &.visible {
+            display: block;
+          }
+
+          &:nth-child(2) {
+            position: absolute;
+            top: 23px;
+            right: 10px;
+            z-index: 4;
+            background-color: white;
+          }
+        }
+      }
+
+      &.visible {
+        left: 30px;
+      }
+
+      & .search {
+        &__box {
+          top: 18px;
+          width: calc(100vw - 60px);
+
+          & input {
+            padding-right: 25px;
+          }
+        }
+      }
+    }
+
+    &__burger {
+      display: block;
+    }
+
+    &__filter {
+      margin-top: 70px;
     }
   }
 }

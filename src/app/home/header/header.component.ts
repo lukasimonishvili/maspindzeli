@@ -27,9 +27,24 @@ export class HeaderComponent implements OnInit {
     tripTypes: []
   };
 
+  isHeaderVisible: boolean = false;
+  isSearchVisible: boolean = false;
+
   constructor() {}
 
   ngOnInit() {}
+
+  onSearchKeyUp(e) {
+    console.log(e.target.value);
+  }
+
+  toggleHeaderView() {
+    this.isHeaderVisible = !this.isHeaderVisible;
+  }
+
+  toggleSearchView() {
+    this.isSearchVisible = !this.isSearchVisible;
+  }
 
   getPickedDates() {
     let dates = document.getElementsByClassName("dp-picker-input");

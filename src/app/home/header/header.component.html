@@ -4,7 +4,10 @@
       <h1 class="ms-header__logo">
         <img src="../../../assets/img/header-logo.png" alt="" />
       </h1>
-      <nav class="ms-header__navigation flex-center">
+      <nav
+        [ngClass]="{ visible: isHeaderVisible }"
+        class="ms-header__navigation flex-center"
+      >
         <div class="ms-header__navigation__item">HOME</div>
         <div class="ms-header__navigation__item">TRIPS</div>
         <div class="ms-header__navigation__item">ABOUT</div>
@@ -17,10 +20,36 @@
             [background]="'transparent'"
           ></app-select>
         </div>
-        <div class="ms-header__navigation__item">
-          <img src="../../../assets/img/header-search-icon.svg" alt="" />
+        <div class="ms-header__navigation__item search relative">
+          <img
+            (click)="toggleSearchView()"
+            src="../../../assets/img/header-search-icon.svg"
+            alt=""
+            [ngClass]="{ visible: !isSearchVisible }"
+          />
+          <img
+            (click)="toggleSearchView()"
+            src="../../../assets/img/icons/close.svg"
+            alt=""
+            [ngClass]="{ visible: isSearchVisible }"
+          />
+          <div
+            class="search__box absolute"
+            [ngClass]="{ visible: isSearchVisible }"
+          >
+            <input (keyup)="onSearchKeyUp($event)" type="text" />
+          </div>
         </div>
       </nav>
+      <div
+        [ngClass]="{ active: isHeaderVisible }"
+        class="ms-header__burger relative"
+        (click)="toggleHeaderView()"
+      >
+        <div class="ms-header__burger__item absolute"></div>
+        <div class="ms-header__burger__item absolute"></div>
+        <div class="ms-header__burger__item absolute"></div>
+      </div>
     </div>
     <div class="ms-header__filter flex-space-btw">
       <div class="ms-header__filter__wrapper">
@@ -69,6 +98,7 @@
           <div class="ms-header__filter__label">TRIP TYPE</div>
           <div class="ms-header__filter__boxes flex-space-around">
             <checkbox
+              [styles]="{ 'margin-right': 'auto' }"
               *ngFor="let item of checkboxes"
               [label]="item"
               (onChange)="onCheckBoxChange($event)"
