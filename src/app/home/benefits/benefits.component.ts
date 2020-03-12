@@ -28,7 +28,7 @@ export class BenefitsComponent implements OnInit {
       text: "Best value for the money pereposition"
     },
     {
-      image: "../../../assets/img/benefits/5.png",
+      image: "../../../assets/img/benefits/6.png",
       text: "Simple checkout options"
     }
   ];

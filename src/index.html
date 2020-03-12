@@ -5,6 +5,7 @@
     <title>Maspindzeli</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
   </head>
@@ -14,9 +15,13 @@
     <script id="slideScript">
       window.addEventListener("load", () => {
         let swiper = new Swiper(".swiper-container", {
-          slidesPerView: 3,
-          spaceBetween: 10,
-          breakpoints: { "1700": { spaceBetween: 80 } },
+          slidesPerView: 1,
+          spaceBetween: 0,
+          breakpoints: {
+            "1151": { spaceBetween: 80, slidesPerView: 3 },
+            "881": { spaceBetween: 50, slidesPerView: 3 },
+            "481": { spaceBetween: 25, slidesPerView: 2 }
+          },
           navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
