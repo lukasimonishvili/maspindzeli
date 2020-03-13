@@ -1,0 +1,49 @@
+.ms-sidebar {
+  width: 110px;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  background-color: #f7fafa;
+
+  &__list {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__item {
+    width: 100%;
+    padding: 50px 0 30px 0;
+
+    & img {
+      display: block;
+      margin: 0 auto;
+      max-height: 55px;
+      width: auto;
+      margin-bottom: 10px;
+    }
+
+    & span {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-size: 18px;
+      line-height: 21px;
+      color: rgba(19, 84, 104, 0.5);
+    }
+
+    &__active {
+      background-color: #f7b334;
+
+      & img {
+        filter: contrast(100);
+      }
+
+      & span {
+        color: white;
+      }
+    }
+  }
+}

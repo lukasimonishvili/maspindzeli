@@ -4,6 +4,7 @@
   margin-top: -195px;
   overflow: hidden;
   min-height: 1086px;
+  pointer-events: none;
 
   &__container {
     display: flex;
@@ -144,6 +145,7 @@
       border-radius: 50%;
       background-color: #e6e8e9;
       cursor: pointer;
+      pointer-events: all;
 
       &:first-child {
         margin-right: 10px;
@@ -281,6 +283,10 @@
       &__item {
         width: 30px;
         height: 30px;
+
+        & svg {
+          width: 10px;
+        }
       }
     }
 

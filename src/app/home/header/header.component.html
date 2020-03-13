@@ -95,8 +95,13 @@
           </div>
         </div>
         <div class="ms-header__filter__bottom flex-center">
-          <div class="ms-header__filter__label">TRIP TYPE</div>
-          <div class="ms-header__filter__boxes flex-space-around">
+          <div class="ms-header__filter__label" (click)="toggleBoxesview()">
+            TRIP TYPE
+          </div>
+          <div
+            [ngClass]="{ 'ms-header__filter__boxes__visible': isBoxesVisible }"
+            class="ms-header__filter__boxes flex-space-around"
+          >
             <checkbox
               [styles]="{ 'margin-right': 'auto' }"
               *ngFor="let item of checkboxes"

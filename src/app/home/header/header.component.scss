@@ -474,6 +474,13 @@
       &__boxes {
         width: auto;
         flex-direction: column;
+        overflow: hidden;
+        max-height: 0;
+        transition: 0.4s;
+
+        &__visible {
+          max-height: 1000vh;
+        }
 
         & checkbox {
           padding: 5px 0;

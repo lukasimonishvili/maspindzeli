@@ -1,0 +1,14 @@
+<aside class="ms-sidebar fixed">
+  <ul class="ms-sidebar__list">
+    <li
+      class="ms-sidebar__item"
+      *ngFor="let nav of sideBarData"
+      [routerLink]="[nav.link]"
+      routerLinkActive="ms-sidebar__item__active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <img src="{{ nav.image }}" alt="" />
+      <span>{{ nav.name }}</span>
+    </li>
+  </ul>
+</aside>

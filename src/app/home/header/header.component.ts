@@ -29,6 +29,7 @@ export class HeaderComponent implements OnInit {
 
   isHeaderVisible: boolean = false;
   isSearchVisible: boolean = false;
+  isBoxesVisible: boolean = false;
 
   constructor() {}
 
@@ -44,6 +45,10 @@ export class HeaderComponent implements OnInit {
 
   toggleSearchView() {
     this.isSearchVisible = !this.isSearchVisible;
+  }
+
+  toggleBoxesview() {
+    this.isBoxesVisible = !this.isBoxesVisible;
   }
 
   getPickedDates() {
