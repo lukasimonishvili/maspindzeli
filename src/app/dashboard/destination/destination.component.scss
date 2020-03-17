@@ -62,5 +62,121 @@
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 40px rgba(0, 85, 106, 0.08);
+    cursor: pointer;
+
+    &__text {
+      padding-left: 10px;
+      font-size: 1.8rem;
+      color: #135468;
+    }
+  }
+
+  &__list {
+    margin-top: 55px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  &__place {
+    width: 390px;
+    box-shadow: 0 0 40px rgba(0, 85, 106, 0.08);
+    margin-bottom: 65px;
+    padding-bottom: 10px;
+    border-radius: 3px;
+
+    &__image {
+      width: 100%;
+      height: 245px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-bottom: 15px;
+      border-radius: 3px 3px 0 0;
+      cursor: pointer;
+
+      &__hover {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 85, 106, 0.76);
+        border-radius: 3px 3px 0 0;
+        transform: scale(0);
+        transition: 0.4s;
+      }
+
+      &:hover &__hover {
+        transform: scale(1);
+      }
+    }
+
+    &__wrapper {
+      width: 100%;
+      padding: 0 20px;
+
+      &:last-child {
+        margin-top: 30px;
+      }
+    }
+
+    &__title {
+      font-size: 2.8rem;
+      line-height: 3.3rem;
+      color: #135468;
+    }
+
+    &__rate {
+      &__summ {
+        font-size: 16px;
+        line-height: 18px;
+        padding-left: 10px;
+      }
+    }
+
+    &__distance {
+      color: #135468;
+      font-size: 16px;
+    }
+
+    &__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 42px;
+      height: 42px;
+      background-color: #ffac00;
+      border: 0.5px solid #00556a;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &__text {
+        padding-left: 10px;
+        color: white;
+        font-size: 18px;
+      }
+
+      & img {
+        width: 20px;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    font-size: 2.2rem;
+    line-height: 5rem;
+    color: #135468;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -15px;
+      z-index: -1;
+      width: 6.5rem;
+      height: 5rem;
+      border-radius: 7px;
+      background-color: #ffb100;
+    }
   }
 }

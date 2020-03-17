@@ -7,6 +7,7 @@
           placeholder="Search..."
           type="text"
           class="ms-dest__search__input"
+          (keyup)="onSearchKeyUp($event)"
         />
         <img
           src="../../../assets/img/header-search-icon.svg"
@@ -14,7 +15,60 @@
           class="ms-dest__search__icon absolute"
         />
       </div>
-      <div class="ms-dest__view flex-center"></div>
+      <div class="ms-dest__view flex-center">
+        <img src="../../../assets/img/icons/location-dark.svg" alt="" />
+        <span class="ms-dest__view__text">MAP VIEW</span>
+      </div>
+    </div>
+  </div>
+  <ul class="ms-dest__list flex-space-around">
+    <li class="ms-dest__place" *ngFor="let place of places">
+      <div
+        class="ms-dest__place__image"
+        [ngStyle]="{ 'background-image': 'url(' + place.image + ')' }"
+      >
+        <div class="ms-dest__place__image__hover flex-center-x2">
+          <div class="ms-dest__place__icon">
+            <img src="../../../assets/img/icons/plus.svg" alt="" />
+          </div>
+          <span class="ms-dest__place__icon__text">Add this place</span>
+        </div>
+      </div>
+      <div class="ms-dest__place__wrapper flex-space-btw">
+        <h4 class="ms-dest__place__title">{{ place.title }}</h4>
+        <div class="ms-dest__place__rate flex-center">
+          <img
+            src="../../../assets/img/icons/star-full.png"
+            alt=""
+            *ngFor="let star of counter(place.rate.stars)"
+          />
+          <img
+            src="../../../assets/img/icons/star-empty.png"
+            alt=""
+            *ngFor="let star of counter(5 - place.rate.stars)"
+          />
+          <span class="ms-dest__place__rate__summ">{{
+            "(" + place.rate.total + ")"
+          }}</span>
+        </div>
+      </div>
+      <div class="ms-dest__place__wrapper flex-space-btw">
+        <div class="ms-dest__place__activities">
+          <img
+            src="{{ activitie }}"
+            alt=""
+            *ngFor="let activitie of place.activites"
+          />
+        </div>
+        <span class="ms-dest__place__distance">{{
+          "~" + place.distance + "KM"
+        }}</span>
+      </div>
+    </li>
+  </ul>
+  <div class="ms-dest__link__wrapper flex-center-x2">
+    <div class="ms-dest__link relative" routerLink="/dashboard/activity">
+      CHOOSE ACTIVITIES
     </div>
   </div>
 </section>
