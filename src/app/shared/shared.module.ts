@@ -9,6 +9,7 @@ import { SelectComponent } from "./select/select.component";
 import { NumberSpinerComponent } from "./number-spiner/number-spiner.component";
 import { CheckboxComponent } from "./checkbox/checkbox.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
+import { BooleanComponent } from "./boolean/boolean.component";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SidebarComponent } from "./sidebar/sidebar.component";
     SelectComponent,
     NumberSpinerComponent,
     CheckboxComponent,
-    SidebarComponent
+    SidebarComponent,
+    BooleanComponent
   ],
   imports: [CommonModule, DpDatePickerModule, MzOutclickModule, RouterModule],
   exports: [
@@ -24,7 +26,8 @@ import { SidebarComponent } from "./sidebar/sidebar.component";
     SelectComponent,
     NumberSpinerComponent,
     CheckboxComponent,
-    SidebarComponent
+    SidebarComponent,
+    BooleanComponent
   ]
 })
 export class SharedModule {}

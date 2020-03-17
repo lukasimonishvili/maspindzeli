@@ -1,0 +1,13 @@
+<div class="boolean flex-center">
+  <img
+    src="../../../assets/img/icons/filter-icon.svg"
+    alt=""
+    class="boolean__icon"
+  />
+  <span class="boolean__display">
+    <span [ngClass]="{ boolean__display__hidden: !value }">Yes</span>
+    <span [ngClass]="{ boolean__display__hidden: value }">No</span>
+  </span>
+  <span class="boolean__arrow" (click)="toggleValue()"><</span>
+  <span class="boolean__arrow" (click)="toggleValue()">></span>
+</div>

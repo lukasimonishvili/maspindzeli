@@ -1,0 +1,22 @@
+<header class="ms-header flex-space-btw">
+  <h1 class="ms-header__logo">
+    <img src="../../../assets/img/header-logo.png" alt="" />
+  </h1>
+  <nav
+    [ngClass]="{ visible: isHeaderVisible }"
+    class="ms-header__navigation flex-center"
+  >
+    <div class="ms-header__navigation__item">HOME</div>
+    <div class="ms-header__navigation__item">TRIPS</div>
+    <div class="ms-header__navigation__item">ABOUT</div>
+    <div class="ms-header__navigation__item">CONTACT</div>
+    <div class="ms-header__navigation__item">
+      <app-select
+        [defaultValue]="'EN'"
+        [options]="['EN', 'KA', 'RU']"
+        (onSelect)="onLanguageSelect($event)"
+        [background]="'transparent'"
+      ></app-select>
+    </div>
+  </nav>
+</header>

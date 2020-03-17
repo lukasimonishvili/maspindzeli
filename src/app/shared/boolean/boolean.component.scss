@@ -1,0 +1,40 @@
+.boolean {
+  height: 100%;
+
+  &__icon {
+    width: auto;
+    height: 18px;
+  }
+
+  &__display {
+    padding-left: 10px;
+    width: 32.7px;
+    font-size: 2.4rem;
+    color: #00556a;
+    font-weight: normal;
+
+    & span {
+      display: block;
+      transition: 0.4s;
+      transform: scale(1);
+    }
+
+    &__hidden {
+      overflow: hidden;
+      height: 0 !important;
+      transform: scale(0) !important;
+    }
+  }
+
+  &__arrow {
+    padding-left: 15px;
+    font-size: 1.8rem;
+    color: #00556a;
+    font-weight: normal;
+    cursor: pointer;
+
+    &:last-child {
+      padding-left: 6px;
+    }
+  }
+}

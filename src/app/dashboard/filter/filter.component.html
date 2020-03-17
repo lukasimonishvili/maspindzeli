@@ -1,0 +1,51 @@
+<div class="ms-filter">
+  <div class="ms-filter__wrapper flex-center">
+    <div class="date flex-center">
+      <img src="../../../assets/img/icons/date.png" alt="" class="date__icon" />
+      <date-picker [placeholder]="'From'"></date-picker>
+      <div class="date__line"></div>
+      <date-picker [placeholder]="'To'"></date-picker>
+    </div>
+    <div class="guests flex-center">
+      <img
+        class="guests__icon"
+        src="../../../assets/img/icons/guest.png"
+        alt=""
+      />
+      <number-spiner
+        [defaultValue]="0"
+        (onChange)="onGuestCountChange($event)"
+        [minValue]="0"
+      ></number-spiner>
+    </div>
+    <app-boolean (onToggleValue)="onBooleanChange($event)"></app-boolean>
+    <button class="ms-filter__update" (click)="onUpdate()">UPDATE</button>
+  </div>
+  <div class="ms-filter__wrapper flex-center">
+    <div class="ms-filter__label">TRIP TYPE</div>
+    <div class="ms-filter__checkbox flex-space-around">
+      <checkbox
+        [styles]="{ 'margin-right': 'auto' }"
+        *ngFor="let item of checkboxes"
+        [label]="item"
+        (onChange)="onCheckBoxChange($event)"
+      ></checkbox>
+    </div>
+  </div>
+  <div class="ms-filter__wrapper flex">
+    <div
+      class="ms-filter__place flex-center"
+      [ngClass]="{ 'ms-filter__place__active': i == activePlaceIndex }"
+      *ngFor="let place of places; let i = index"
+      (click)="setActivePlace(i)"
+    >
+      <span class="ms-filter__place__name">{{ place.name }}</span>
+      <span class="ms-filter__place__days">{{ place.days + " Days" }}</span>
+    </div>
+    <div class="ms-filter__plus flex-center-x2">
+      <span class="flex-center-x2"
+        ><img src="../../../assets/img/icons/plus.svg" alt=""
+      /></span>
+    </div>
+  </div>
+</div>
